@@ -1,0 +1,186 @@
+package javaapplication31;
+
+
+public class Engine {
+    private int cylenders;
+    private int capacity ;
+    private int hp;
+
+    public Engine() {
+    }
+
+    public Engine(int cylenders, int capacity, int hp) {
+        this.cylenders = cylenders;
+        this.capacity = capacity;
+        this.hp = hp;
+    }
+
+    public int getCylenders() {
+        return cylenders;
+    }
+
+    public void setCylenders(int cylenders) {
+        this.cylenders = cylenders;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    @Override
+    public String toString() {
+        return "Engine{" + "cylenders=" + cylenders + ", capacity=" + capacity + ", hp=" + hp + '}';
+    }
+    
+   
+    
+    
+}
+
+
+package javaapplication31;
+
+
+public class car {
+   
+        private String type;
+      private int year;
+      private String color;
+      private Engine engine;
+      private GearBox Gearbox;
+
+    public car() {
+    }
+
+    public car(String type, int year, String color, Engine engine, GearBox GeaRBox) {
+        this.type = type;
+        this.year = year;
+        this.color = color;
+        this.engine = engine;
+        
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public GearBox getGearbox() {
+        return Gearbox;
+    }
+
+    public void setGeaRBox(GearBox Gearbox) {
+        this.Gearbox = Gearbox;
+    }
+
+    @Override
+    public String toString() {
+        return "car{" + "type=" + type + ", year=" + year + ", color=" + color + ", engine=" + engine + ", GeaRBox=" + Gearbox + '}';
+    }
+    
+public void setGearbox(GearBox GearBox){
+    this.Gearbox = Gearbox;
+}
+   
+    }
+      
+      
+    
+package javaapplication31;
+
+
+public class GearBox {
+private Boolean automatic;
+private int gearscount;
+
+    public GearBox() {
+    }
+
+    public GearBox(Boolean automatic, int gearscount) {
+        this.automatic = automatic;
+        this.gearscount = gearscount;
+    }
+
+    public Boolean getAutomatic() {
+        return automatic;
+    }
+
+    public void setAutomatic(Boolean automatic) {
+        this.automatic = automatic;
+    }
+
+    public int getGearscount() {
+        return gearscount;
+    }
+
+    public void setGearscount(int gearscount) {
+        this.gearscount = gearscount;
+    }
+
+    @Override
+    public String toString() {
+        return "GearBox{" + "automatic=" + automatic + ", gearscount=" + gearscount + '}';
+    }
+
+    
+    
+    }
+    
+package javaapplication31;
+
+
+public class CarFactory {
+
+   
+    public static void main(String[] args) {
+       Engine e1=new Engine (4 , 2400 , 300);
+       car c1=new car();
+       c1.setType("Ford/Mustang");
+       c1.setYear(2015);
+       c1.setColor("Red");
+               c1.setEngine(e1);
+               GearBox g1 = new GearBox(true,7);
+               c1.setGearbox(g1);
+              
+    }
+    
+}
